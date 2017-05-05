@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fadfox-menu>
+
+    <menu parent="ROOT" code="MENU" name="系统根菜单" level="0" status="0" type="0" icon="" target="" url=""/>
+    <menu parent="MENU" code="MENU_0100" name="首页" level="1" status="0" type="1" icon="" target="" url="/index.htm"/>
+    <menu parent="MENU" code="MENU_0200" name="服务操作" level="1" status="0" type="1" icon="" target="" url="/service.htm"/>
+    <menu parent="MENU_0200" code="MENU_0200_0210" name="服务列表" level="2" status="0" type="1" icon="" target="" url="/serviceList.htm"/>
+    <menu parent="MENU_0200" code="MENU_0200_0220" name="命令列表" level="2" status="0" type="1" icon="" target="" url="/commandList.htm"/>
+    <menu parent="MENU_0200" code="MENU_0200_0230" name="参数列表" level="2" status="0" type="1" icon="" target="" url="/parameterList.htm"/>
+
+</fadfox-menu>

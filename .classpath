@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/dbo"/>
+	<classpathentry kind="src" path="src/main"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="lib/fadfox.jar"/>
+	<classpathentry kind="lib" path="lib/fadfox_httpd.jar"/>
+	<classpathentry kind="lib" path="lib/fadfox_res.jar"/>
+	<classpathentry kind="lib" path="lib/fadfox_template.jar"/>
+	<classpathentry kind="lib" path="lib/fadfox_orm.jar"/>
+	<classpathentry kind="lib" path="lib/fadfox_sqlite_3.8.6.jar"/>
+	<classpathentry kind="lib" path="lib/fadfox_manager.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

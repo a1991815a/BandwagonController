@@ -1,0 +1,9 @@
+${bandwagon()}
+<div class="mainnav">
+    aaa
+</div>
+
+<div class="content">
+    aaa
+</div>
+${bandwagon_end()}

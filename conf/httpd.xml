@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE FADFOX-CONFIG PUBLIC "-//FADFOX //DTD Fadfox-Config Configuration 1.3.0//EN" "http://fadfox.zhiqim.com/dtd/fadfox_config_1_3_0.dtd">
+<fadfox-config>
+
+    <group id="resource" desc="WEB容器服务配置">
+        <item key="listen" value="resource.listener" update="false" desc="HTTP服务的监听器" />
+        <item key="context" value="resource.root" update="false" desc="HTTP服务下包括的上下文环境，多个用逗号隔开" />
+    </group>
+
+    <group id="resource.listener" desc="WEB容器服务配置">
+        <item key="scheme" value="HTTP" update="false" desc="HTTP或HTTPS协议" />
+        <item key="port" value="80" update="false" desc="监听端口" />
+        <item key="minPoolSize" value="5" update="false" desc="HTTP处理线程池最小值" />
+        <item key="maxPoolSize" value="10" update="false" desc="HTTP处理线程池最大值" />
+    </group>
+    
+    <group id="resource.root" desc="Web界面">
+        <item key="path" value="/" update="false" desc="上下文环境路径，必填" />
+        <item key="resourceType" value="directory" update="false" desc="资源目录类型classpath|directory，无资源时可不配置" />
+        <item key="resourcePath" value="./resource" update="false" desc="资源目录，无资源时可不配置" />
+        <item key="welcomeUrl" value="/index.htm" update="false" desc="欢迎页，无资源时可不配置，/开头" />
+    </group>
+
+</fadfox-config>

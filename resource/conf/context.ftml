@@ -1,0 +1,53 @@
+<#---------------------------------------------------->
+<#--  以下为变量定义           ------------------------>
+<#---------------------------------------------------->
+
+
+<#--属性定义-->
+<#var name="BandwagonController"/>
+<#var version="V1.0"/>
+
+<#var page.size=30 />
+
+<#var bandwagon.css = "/fadfox_v1.3.0_r2017022701.css"/>
+<#var bandwagon.js = "/fadfox_v1.3.0_r2017022701.js"/>
+<#var bandwagon.ex_css="/res/bandwagon.css"/>
+
+<#function bandwagon_head()>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+    <meta http-equiv="description" content="搬瓦工控制器" >
+    ${Styles.src(bandwagon.css)}
+    ${Styles.src(bandwagon.ex_css)}
+    ${Scripts.src(bandwagon.js)}
+</#function>
+
+<#function bandwagon_head_end()>
+</head>
+</#function>
+
+<#function bandwagon_body()>
+<body>
+<div class="container">
+</#function>
+
+<#function bandwagon_body_end()>
+</div>
+<div class="footer">
+    <font>脚注</font>
+</div>
+</body>
+</html>
+</#function>
+
+<#function bandwagon()>
+${bandwagon_head()}
+${bandwagon_head_end()}
+${bandwagon_body()}
+</#function>
+
+<#function bandwagon_end()>
+${bandwagon_body_end()}
+</#function>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fadfox-dbo>
+
+<config version="1.2.0" dbType="sqlite" folder="../src/dbo" initDataWidth="820">
+<![CDATA[
+/*
+ * 版权所有 (C) 2015 知启蒙(WWW.ZHIQIM.COM) 保留所有权利。
+ *
+ * Download http://www.zhiqim.com/fadfox/ 欢迎加盟[凡狐]兴趣小组。
+ *
+ * 由数据库字典自动生成的类文件，修改请使用数据库字典编辑器修改。
+ */
+]]>
+</config>
+
+<package name="net.likeqin.bandwagon.dbo" type="true" desc="搬瓦工数据库">
+
+    <table name="SERVICE" desc="服务类" key="SERVICE_ID" type="InnoDB">
+        <field column="SERVICE_ID" type="long" length="" notNull="true" desc="服务ID(自动生成)"/>
+        <field column="SERVICE_NAME" type="string" length="64" notNull="true" desc="服务名"/>
+        <field column="SERVICE_COMMENT" type="string" length="512" notNull="true" desc="服务说明"/>
+    </table>
+
+    <table name="COMMAND" desc="命令表" key="COMMAND_ID" type="InnoDB">
+        <field column="COMMAND_ID" type="long" length="" notNull="true" desc="命令ID"/>
+        <field column="COMMAND_SHELL" type="string" length="32" notNull="true" desc="命令Shell"/>
+        <field column="COMMAND_COMMENT" type="string" length="64" notNull="false" desc="命令说明"/>
+        <field column="SERVICE_ID" type="long" length="" notNull="true" desc="所属服务ID"/>
+    </table>
+
+    <table name="PARAMETER" desc="命令参数表" key="PARAMETER_ID" type="InnoDB">
+        <field column="PARAMETER_ID" type="long" length="" notNull="true" desc="参数ID"/>
+        <field column="PARAMETER_SHELL" type="string" length="128" notNull="true" desc="参数shell"/>
+        <field column="PARAMETER_COMMENT" type="string" length="128" notNull="false" desc="参数说明"/>
+        <field column="COMMAND_ID" type="long" length="" notNull="true" desc="所属命令ID"/>
+    </table>
+
+    <view name="SERVICE_COMMANDS" type="true" desc="服务对应的所有命令" table="SERVICE,COMMAND">
+        <join type="EQUAL" lTable="SERVICE" lColumn="SERVICE_ID" rTable="COMMAND" rColumn="SERVICE_ID"/>
+
+        <field column="SERVICE_ID" table="SERVICE"/>
+        <field column="SERVICE_NAME" table="SERVICE"/>
+        <field column="COMMAND_ID" table="COMMAND"/>
+        <field column="COMMAND_SHELL" table="COMMAND"/>
+        <field column="COMMAND_COMMENT" table="COMMAND"/>
+    </view>
+
+    <view name="COMMAND_PARAMETERS" type="true" desc="命令对应的所有参数" table="COMMAND,PARAMETER">
+        <join type="EQUAL" lTable="COMMAND" lColumn="COMMAND_ID" rTable="PARAMETER" rColumn="COMMAND_ID"/>
+
+        <field column="COMMAND_ID" table="COMMAND"/>
+        <field column="COMMAND_SHELL" table="COMMAND"/>
+        <field column="PARAMETER_ID" table="PARAMETER"/>
+        <field column="PARAMETER_SHELL" table="PARAMETER"/>
+        <field column="PARAMETER_COMMENT" table="PARAMETER"/>
+    </view>
+
+</package>
+
+</fadfox-dbo>
