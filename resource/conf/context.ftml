@@ -33,13 +33,24 @@
 <div class="container">
 </#function>
 
-<#function bandwagon_body_end()>
+<#function bandwagon_body_end(hasFooter, footerHeight)>
 </div>
-<div class="footer">
+<#if hasFooter>
+<div class="footer" style="height:${footerHeight}px;">
     <font>脚注</font>
 </div>
+</#if>
 </body>
 </html>
+</#function>
+
+<#function bandwagon_mainnav(navHeight)>
+<div style="height:${navHeight + 70}px;"></div>
+<div class="mainnav" style="height:${navHeight}px;">
+</#function>
+
+<#function bandwagon_mainnav_end()>
+</div>
 </#function>
 
 <#function bandwagon()>
@@ -48,6 +59,6 @@ ${bandwagon_head_end()}
 ${bandwagon_body()}
 </#function>
 
-<#function bandwagon_end()>
-${bandwagon_body_end()}
+<#function bandwagon_end(hasFooter, footerHeight)>
+${bandwagon_body_end(hasFooter, footerHeight)}
 </#function>

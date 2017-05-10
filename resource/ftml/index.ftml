@@ -1,9 +1,8 @@
 ${bandwagon()}
-<div class="mainnav">
-    aaa
-</div>
-
+${bandwagon_mainnav(50)}
+<p>导航栏</p>
+${bandwagon_mainnav_end()}
 <div class="content">
     aaa
 </div>
-${bandwagon_end()}
+${bandwagon_end(true, 100)}
